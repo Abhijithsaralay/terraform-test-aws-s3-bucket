@@ -1,4 +1,4 @@
-
+/*
 terraform {
   backend "remote" {
     hostname = "cmrit939.scalr.io"
@@ -22,3 +22,4 @@ module "aws-s3-bucket" {
 	# (Optional, Forces new resource) The name of the bucket. If omitted, Terraform will assign a random, unique name.
  	bucket = <value>
 }
+*/
