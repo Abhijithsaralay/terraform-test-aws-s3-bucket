@@ -1,3 +1,10 @@
+provider "aws" {
+  region = "ap-south-1"
+}
+
+
+
+
 locals {
   attach_policy = var.attach_elb_log_delivery_policy || var.attach_deny_insecure_transport_policy || var.attach_policy
 }
