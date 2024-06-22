@@ -13,7 +13,7 @@ resource "aws_s3_bucket" "this" {
   count = var.create_bucket ? 1 : 0
 
   #bucket        = var.bucket
-  bucket = "my-tf-test-bucket-${var.unique_id}"
+  bucket = "amma-tf-test1-bucket-${var.unique_id}"
   acl    = "private"
 
   bucket_prefix = var.bucket_prefix
