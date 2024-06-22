@@ -13,7 +13,9 @@ resource "aws_s3_bucket" "this" {
   count = var.create_bucket ? 1 : 0
 
   #bucket        = var.bucket
-  bucket="my-unique-bucket-name-${var.unique_id}"
+  bucket = "my-tf-test-bucket-${var.unique_id}"
+  acl    = "private"
+
   bucket_prefix = var.bucket_prefix
 
   # hack when `null` value can't be used (eg, from terragrunt, https://github.com/gruntwork-io/terragrunt/pull/1367)
@@ -330,4 +332,9 @@ resource "aws_s3_bucket_public_access_block" "this" {
   block_public_policy     = var.block_public_policy
   ignore_public_acls      = var.ignore_public_acls
   restrict_public_buckets = var.restrict_public_buckets
+}
+variable "unique_id" {
+  description = "A unique identifier for the bucket name"
+  type        = string
+  default     = "20240618-1235"  # Replace with your unique identifier
 }
