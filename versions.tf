@@ -4,6 +4,6 @@ terraform {
 
   required_providers {
     source="hashicorp/aws"
-    aws = ">= 3.75"
+    aws = ">= 4.0.0"
   }
 }
