@@ -10,9 +10,7 @@ terraform {
   }
 }
 
-provider "aws" {
-  region = "ap-south-1"
-}
+
 
 
 module "aws-s3-bucket" {
