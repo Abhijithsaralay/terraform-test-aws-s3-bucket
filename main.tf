@@ -12,7 +12,8 @@ locals {
 resource "aws_s3_bucket" "this" {
   count = var.create_bucket ? 1 : 0
 
-  bucket        = var.bucket
+  #bucket        = var.bucket
+  bucket="my-unique-bucket-name-${var.unique_id}"
   bucket_prefix = var.bucket_prefix
 
   # hack when `null` value can't be used (eg, from terragrunt, https://github.com/gruntwork-io/terragrunt/pull/1367)
